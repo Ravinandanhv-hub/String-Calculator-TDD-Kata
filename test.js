@@ -14,4 +14,8 @@ describe('StringCalculator', () => {
         expect(calculator.add('1,2')).toBe(3)
     })
 
+    test('should return 6 for an string 1\n2,3', ()=>{
+        expect(calculator.add('1\n2,3')).toBe(6)
+    })
+
 });

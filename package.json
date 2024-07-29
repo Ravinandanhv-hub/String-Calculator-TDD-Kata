@@ -1,0 +1,19 @@
+{
+  "name": "string-calculator-tdd-kata",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ravinandanhv-hub/String-Calculator-TDD-Kata.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ravinandanhv-hub/String-Calculator-TDD-Kata/issues"
+  },
+  "homepage": "https://github.com/Ravinandanhv-hub/String-Calculator-TDD-Kata#readme",
+  "description": ""
+}

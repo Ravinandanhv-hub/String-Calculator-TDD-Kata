@@ -15,6 +15,9 @@ class StringCalculator {
             if(num < 0) {
                 negativeNumbersArray.push(num);
             }
+            if(num > 1000) {
+                num = 0;
+            }
             return total + num;
         }, 0)
 
@@ -25,5 +28,5 @@ class StringCalculator {
         return sum;
     }
 }
-  
+
 module.exports = StringCalculator;

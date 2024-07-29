@@ -22,4 +22,16 @@ describe('StringCalculator', () => {
         expect(calculator.add("//;\n1;2")).toBe(3);
     });
 
+    test('should throw an exception for negative numbers', () => {
+        expect(() => calculator.add("1,-2,3")).toThrow('negatives not allowed: -2');
+    });
+    
+    test('should throw an exception listing all negative numbers', () => {
+        expect(() => calculator.add("1,-2,3,-4")).toThrow('negatives not allowed: -2,-4');
+    });
+
+    test('should throw an exception listing all negative numbers', () => {
+        expect(() => calculator.add("//*\n-1;2")).toThrow('negatives not allowed: -2,-4');
+        });
+
 });

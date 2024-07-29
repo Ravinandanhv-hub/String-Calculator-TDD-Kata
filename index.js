@@ -1,24 +1,29 @@
 class StringCalculator {
     add(numbers) {
-      if (numbers === "") return 0;
+        if (numbers === "") return 0;
 
-      let delimiter = /,|\n/;
-      if (numbers.startsWith("//")) {
-        const delimiterEndIndex = numbers.indexOf("\n");
-        delimiter = new RegExp(numbers.substring(2, delimiterEndIndex));
-        numbers = numbers.substring(delimiterEndIndex + 1);
-      }
+        let delimiter = /,|\n/;
+        if (numbers.startsWith("//")) {
+            const delimiterEndIndex = numbers.indexOf("\n");
+            delimiter = new RegExp(numbers.substring(2, delimiterEndIndex));
+            numbers = numbers.substring(delimiterEndIndex + 1);
+        }
 
-      if(numbers){
+        const negativeNumbersArray = [];
         const sum = numbers.split(delimiter)?.reduce((total , num) => {
-            return total + Number(num);
+            num = Number(num);
+            if(num < 0) {
+                negativeNumbersArray.push(num);
+            }
+            return total + num;
         }, 0)
+
+        if(negativeNumbersArray?.length > 0) {
+            throw new Error(`negatives not allowed: ${negativeNumbersArray.toString(',')}`)
+        }
+
         return sum;
-      }
     }
 }
-
-let calculator = new StringCalculator
-calculator.add('//;\n1;2')
   
 module.exports = StringCalculator;
